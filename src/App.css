@@ -1,38 +1,200 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90%;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.vote-image img {
+  width: 100%;
+  max-width: 300px; /* Adjust the max-width as needed */
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust gap as needed */
+  margin-right: 50px;
+}
+
+.sidebar {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.sidebar img {
+  width: 50px;
+  height: 70px;
+  cursor: pointer;
+  border: 2px solid #fd8fd1;
+  border-radius: 5px;
+  transition: transform 0.2s;
+  padding-right: 10%;
+}
+
+.sidebar img:hover {
+  transform: scale(1.1);
+}
+
+
+
+#model-image {
+  width: 100px;
+  height: 300px;
+  margin-left: 55%;
+}
+
+#clothing-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Specific clothing item styles for the model */
+.model-image.top {
+  margin-top: 19.5%;
+  margin-left: 49%;
+  width: 100px;
+  height: 30%;
+}
+
+.model-image.jeans {
+  margin-top: 23%;
+  margin-left:48%;
+  height: 33%;
+  width: 108px;
+}
+
+.model-image.dress {
+  margin-top:20.3%;
+  margin-left: 47%;
+  height: 30%;
+  width: 135px;
+}
+
+.model-image.pants {
+  margin-top: 25.5%;
+  margin-left: 49%;
+  width: 98px;
+  height: 30%;
+}
+
+.model-image.tshirt {
+  margin-top: 18.2%;
+  width: 114px;
+  height: 23%;
+  margin-left: 49.1%;
+}
+
+#logo {
+  height: 40%;
+  width:160px;
+}
+
+.navv{
+  display: flex;
+  justify-content: space-around ;
+  align-items: center;
+  width: 100%; 
+  gap: 130px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.icon-group {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+  height: auto;
+  background-color: transparent; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon:nth-child(1) {
+  height: 30px;
+  width: 30px;
+}
+
+.icon:nth-child(2) {
+  height: 17px;
+  width: 15px;
+}
+
+.icon:nth-child(3) {
+  height: 40px;
+  width: 70px;
+}
+
+/* .icon1-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px auto;
+  gap: 60px;
+}
+
+.icon1:nth-child(1) {
+  height: 10%;
+  width: 63px;
+}
+
+.icon1:nth-child(2) {
+  height: 47px;
+  width: 55px;
+}
+
+.icon1:nth-child(3) {
+  height: 40px;
+  width: 30px;
+}
+
+.icon1:nth-child(4) {
+  height: 10px;
+  width: 30px;
+} */
+
+.bottomnav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.small{
+  display: flex;
+  align-items: center;
+}
+
+.bottomtext{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.1rem;
 }
