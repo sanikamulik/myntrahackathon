@@ -26,7 +26,6 @@ body {
 .vote-image img {
   width: 100%;
   max-width: 300px; /* Adjust the max-width as needed */
-  margin-bottom: 20px;
 }
 
 .content {
@@ -64,8 +63,9 @@ body {
 
 #model-image {
   width: 100px;
-  height: 300px;
+  height: 100%;
   margin-left: 55%;
+  /* margin-top: 5rem; */
 }
 
 #clothing-item {
@@ -76,38 +76,38 @@ body {
 
 /* Specific clothing item styles for the model */
 .model-image.top {
-  margin-top: 19.5%;
-  margin-left: 49%;
+  margin-top: 17.4%;
+  margin-left: 50.4%;
   width: 100px;
   height: 30%;
 }
 
-.model-image.jeans {
-  margin-top: 23%;
-  margin-left:48%;
+.model-image.dress2 {
+  margin-top: 18.7%;
+  margin-left:47.1%;
   height: 33%;
-  width: 108px;
+  width: 11%;
 }
 
-.model-image.dress {
-  margin-top:20.3%;
-  margin-left: 47%;
+.model-image.dress3 {
+  margin-top:20%;
+  margin-left: 49.5%;
   height: 30%;
-  width: 135px;
+  width: 8%;
 }
 
-.model-image.pants {
-  margin-top: 25.5%;
-  margin-left: 49%;
-  width: 98px;
-  height: 30%;
+.model-image.dress4 {
+  margin-top: 15.5%;
+  margin-left: 50.1%;
+ width : 8%;
+  height: 40%;
 }
 
-.model-image.tshirt {
-  margin-top: 18.2%;
-  width: 114px;
-  height: 23%;
-  margin-left: 49.1%;
+.model-image.dress5 {
+  margin-top: 17.8%;
+  width: 10%;
+  height: 35%;
+  margin-left: 48.2%;
 }
 
 #logo {
@@ -197,4 +197,93 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4.1rem;
+}
+
+.content {
+  margin-left: 10%;
+ width: 100%; /* Adjust as needed */
+  height: 100% /* Adjust as needed */
+
+}
+
+#model-image-right{
+  background-color: #EDADD7BD;
+  padding: 10px;
+}
+
+#model-image-left{
+   background-color: #EDADD7;
+  padding: 10px;
+}
+
+#clothing-item-left,
+#clothing-item-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#clothing-item-left.model-image.top {
+  top: -1%;
+  left: -13.9%;
+  width: 8.4%;
+  height: 30%;
+}
+
+#clothing-item-right.model-image.top {
+  top: -1%;
+  left: -1.8%;
+  width: 8.4%;
+  height: 30%;
+}
+#clothing-item-right.model-image.dress2 {
+  top: -2.1%;
+  left: -2.7%;
+  height: 33%;
+  width: 13.1%;
+}
+#clothing-item-left.model-image.dress2 {
+  top: -2.1%;
+  left: -14.8%;
+  height: 33%;
+  width: 13.1%;
+}
+
+#clothing-item-left.model-image.dress5 {
+  top: -1%;
+  left: -14.7%;
+  width: 12%;
+  height: 35%;
+}
+
+#clothing-item-left.model-image.dress3 {
+  top: -1.8%;
+  left: -14.65%;
+  width: 10%;
+  height: 35%;
+}
+#clothing-item-right.model-image.dress3 {
+  top: -1.8%;
+  left: -2.6%;
+  width: 10%;
+  height: 35%;
+}
+#clothing-item-right.model-image.dress5 {
+  top: -0.7%;
+  left: -2.6%;
+  width: 12%;
+  height: 35%;
+}
+
+#clothing-item-right.model-image.dress4 {
+  top: -2%;
+  left: -2.5%;
+  width : 10%;
+  height: 40%;
+}
+#clothing-item-left.model-image.dress4 {
+  top: -2%;
+  left: -14.6%;
+  width : 10%;
+  height: 40%;
 }

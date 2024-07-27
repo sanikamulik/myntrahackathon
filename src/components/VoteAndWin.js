@@ -4,25 +4,32 @@ import ClothingItem from './ClothingItem';
 import voteImage from '../images/vote.png';
 import modelImage from '../images/body.png';
 import topImage from '../images/top.png';
-import jeansImage from '../images/jeans.png';
-import dressImage from '../images/dress.png';
-import pantsImage from '../images/pants.png';
-import tshirtImage from '../images/tshirt.png';
+import dress2Image from '../images/dress2.png';
+import dress3Image from '../images/dress3.png';
+import dress4Image from '../images/dress4.png';
+import dress5Image from '../images/dress5.png';
+import { useNavigate } from 'react-router-dom';
 
 const clothingStyles = {
   top: 'model-image top',
-  jeans: 'model-image jeans',
-  dress: 'model-image dress',
-  pants: 'model-image pants',
-  tshirt: 'model-image tshirt',
+  dress2: 'model-image dress2',
+  dress3: 'model-image dress3',
+  dress4: 'model-image dress4',
+  dress5: 'model-image dress5',
 };
 
 const VoteAndWin = () => {
-  const [clothing, setClothing] = useState({ src: tshirtImage, style: clothingStyles.tshirt });
+  const [clothing, setClothing] = useState({ src: dress2Image, style: clothingStyles.dress2 });
+
+  const navigate = useNavigate();
 
   const changeClothing = (src, style) => {
     setClothing({ src, style });
   };
+
+  const Play = () => {
+    navigate('/MainVote');
+  }
 
   return (
     <div className="container" >
@@ -34,10 +41,10 @@ const VoteAndWin = () => {
         <div className="content">
           <div className="sidebar">
             <ClothingItem src={topImage} alt="Top" className="sidebar-image" onClick={() => changeClothing(topImage, clothingStyles.top)} />
-            <ClothingItem src={jeansImage} alt="Jeans" className="sidebar-image" onClick={() => changeClothing(jeansImage, clothingStyles.jeans)} />
-            <ClothingItem src={dressImage} alt="Dress" className="sidebar-image" onClick={() => changeClothing(dressImage, clothingStyles.dress)} />
-            <ClothingItem src={pantsImage} alt="Pants" className="sidebar-image" onClick={() => changeClothing(pantsImage, clothingStyles.pants)} />
-            <ClothingItem src={tshirtImage} alt="Tshirt" className="sidebar-image" onClick={() => changeClothing(tshirtImage, clothingStyles.tshirt)} />
+            <ClothingItem src={dress2Image} alt="Jeans" className="sidebar-image" onClick={() => changeClothing(dress2Image, clothingStyles.dress2)} />
+            <ClothingItem src={dress3Image} alt="Dress" className="sidebar-image" onClick={() => changeClothing(dress3Image, clothingStyles.dress3)} />
+            <ClothingItem src={dress4Image} alt="Pants" className="sidebar-image" onClick={() => changeClothing(dress4Image, clothingStyles.dress4)} />
+            <ClothingItem src={dress5Image} alt="Tshirt" className="sidebar-image" onClick={() => changeClothing(dress5Image, clothingStyles.dress5)} />
           </div>
           <div className="model">
             <img id="model-image" src={modelImage} alt="Model" />
@@ -45,6 +52,7 @@ const VoteAndWin = () => {
           </div>
         </div>
         <button
+        onClick={Play}
           style={{
             backgroundColor: '#fd8fd1',
             border: 'none',

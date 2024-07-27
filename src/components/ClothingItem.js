@@ -6,11 +6,3 @@ const ClothingItem = ({ src, alt, className, onClick }) => {
 
 export default ClothingItem;
 
-
-// import React from 'react';
-
-// const ClothingItem = ({ src, alt, onClick }) => {
-//   return <img src={src} alt={alt} onClick={onClick} />;
-// };
-
-// export default ClothingItem;
