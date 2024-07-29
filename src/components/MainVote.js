@@ -6,6 +6,7 @@ import topImage from "../images/top.png";
 import dress2Image from "../images/dress2.png";
 import dress3Image from "../images/dress3.png";
 import dress4Image from "../images/dress4.png";
+import { useNavigate } from 'react-router-dom';
 import dress5Image from "../images/dress5.png";
 
 const clothingStyles = {
@@ -31,10 +32,14 @@ const getRandomOutfits = () => {
 
 const MainVote = () => {
   const [outfits, setOutfits] = useState(getRandomOutfits());
-
+  const navigate = useNavigate();
   useEffect(() => {
     setOutfits(getRandomOutfits());
   }, []);
+
+  const Play2 = () => {
+    navigate('/Win');
+  }
 
   return (
     <div className="container">
@@ -65,6 +70,7 @@ const MainVote = () => {
         </div>
         <div className="buttons">
           <button
+          onClick={Play2}
             style={{
               border: "5px solid #E27CBF",
               borderRadius: "7px",

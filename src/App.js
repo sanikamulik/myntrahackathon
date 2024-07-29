@@ -3,6 +3,7 @@ import './App.css';
 import VoteAndWin from './components/VoteAndWin';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainVote from './components/MainVote';
+import Win from './components/Win';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<VoteAndWin />}></Route>
-        <Route path="/MainVote" element={<MainVote />} />
+        <Route path="/MainVote" element={<MainVote />} /> 
+        <Route path="/MainVote" element={<Win />} />
       </Routes>
     </Router>
   );
