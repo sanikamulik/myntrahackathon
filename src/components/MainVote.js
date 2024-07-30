@@ -8,7 +8,7 @@ import dress3Image from "../images/dress3.png";
 import dress4Image from "../images/dress4.png";
 import dress5Image from "../images/dress5.png";
 import { collection, addDoc, query, onSnapshot } from "firebase/firestore";
-import { db } from "./firebase"; // Ensure db is imported correctly
+import { db } from "./firebase"; 
 
 
 const clothingStyles = {

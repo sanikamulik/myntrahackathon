@@ -25,14 +25,14 @@ body {
 
 .vote-image img {
   width: 100%;
-  max-width: 300px; /* Adjust the max-width as needed */
+  max-width: 300px; 
 }
 
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Adjust gap as needed */
+  gap: 20px; 
   margin-right: 50px;
 }
 
@@ -65,7 +65,6 @@ body {
   width: 100px;
   height: 100%;
   margin-left: 55%;
-  /* margin-top: 5rem; */
 }
 
 #clothing-item {
@@ -74,7 +73,7 @@ body {
   left: 0;
 }
 
-/* Specific clothing item styles for the model */
+
 .model-image.top {
   margin-top: 17.4%;
   margin-left: 50.4%;
@@ -152,33 +151,7 @@ body {
   width: 70px;
 }
 
-/* .icon1-group {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 10px auto;
-  gap: 60px;
-}
 
-.icon1:nth-child(1) {
-  height: 10%;
-  width: 63px;
-}
-
-.icon1:nth-child(2) {
-  height: 47px;
-  width: 55px;
-}
-
-.icon1:nth-child(3) {
-  height: 40px;
-  width: 30px;
-}
-
-.icon1:nth-child(4) {
-  height: 10px;
-  width: 30px;
-} */
 
 .bottomnav{
   display: flex;
@@ -201,8 +174,8 @@ body {
 
 .content {
   margin-left: 10%;
- width: 100%; /* Adjust as needed */
-  height: 100% /* Adjust as needed */
+ width: 100%; 
+  height: 100% 
 
 }
 
@@ -292,18 +265,6 @@ body {
   border: 4px solid #A68036;
   border-radius: 10px;
 }
-
-/* .buttons.winner button {
-  border: 5px solid #E27CBF;
-  border-radius: 7px;
-  font-weight: 500;
-  color: #E27CBF;
-  padding: 10px;
-  width: 130px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 1.3rem;
-} */
 
 
 .faded::before {
