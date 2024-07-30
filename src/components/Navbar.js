@@ -1,8 +1,7 @@
 import React from "react";
-import logo from "../images/logo-removebg-preview.png"; // Adjust the import path as necessary
+import logo from "../images/logo-removebg-preview.png";
 import homeIcon from "../images/home-removebg-preview.png";
 import fwdIcon from "../images/fwd-removebg-preview.png";
-
 
 const Navbar = () => {
   return (
@@ -70,27 +69,62 @@ export const BottomNavbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="bottomnav">
         <div className="small">
-          <img style={{width:'3.5rem', height:'2.5rem'}} src={homeIcon} alt="Home" />
-          {/* <p>Home</p> */}
+          <img
+            style={{ width: "3.5rem", height: "2.5rem" }}
+            src={homeIcon}
+            alt="Home"
+          />
         </div>
         <div className="small">
-        <svg style={{width:'3.5rem',height:'2rem'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-          {/* <p style={{marginTop:'1rem'}}>New</p> */}
+          <svg
+            style={{ width: "3.5rem", height: "2rem" }}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-zap"
+          >
+            <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+          </svg>
         </div>
         <div>
-          <img style={{width:'3.5rem',height:'4rem'}} src={fwdIcon} alt="Stores" />
-          {/* <p>Stores</p> */}
+          <img
+            style={{ width: "3.5rem", height: "4rem" }}
+            src={fwdIcon}
+            alt="Stores"
+          />
         </div>
         <div>
-        <svg style={{width:'4rem',height:'2rem'}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>
-          {/* <p>TrendNxt</p> */}
+          <svg
+            style={{ width: "4rem", height: "2rem" }}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-move-up-right"
+          >
+            <path d="M13 5H19V11" />
+            <path d="M19 5L5 19" />
+          </svg>
         </div>
       </div>
       <div className="bottomtext">
-        <p style={{marginLeft:'1.5rem'}}>Home</p>
-        <p>New</p>
-        <p>Stores</p>
-        <p style={{marginRight:'0.8rem'}}>TrendNxt</p>
+        <p
+          style={{ marginLeft: "1.5rem", color: "#FC6CB5", fontWeight: "bold" }}
+        >
+          Home
+        </p>
+        <p style={{ fontWeight: "bold" }}>New</p>
+        <p style={{ fontWeight: "bold" }}>Stores</p>
+        <p style={{ marginRight: "0.8rem", fontWeight: "bold" }}>TrendNxt</p>
       </div>
     </nav>
   );

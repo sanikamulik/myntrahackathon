@@ -6,8 +6,10 @@ import topImage from "../images/top.png";
 import dress2Image from "../images/dress2.png";
 import dress3Image from "../images/dress3.png";
 import dress4Image from "../images/dress4.png";
-import { useNavigate } from 'react-router-dom';
 import dress5Image from "../images/dress5.png";
+import { collection, addDoc, query, onSnapshot } from "firebase/firestore";
+import { db } from "./firebase"; // Ensure db is imported correctly
+
 
 const clothingStyles = {
   top: "model-image top",
@@ -30,25 +32,62 @@ const getRandomOutfits = () => {
   return [shuffled[0], shuffled[1]];
 };
 
+const WIN_THRESHOLD = 30; 
 const MainVote = () => {
   const [outfits, setOutfits] = useState(getRandomOutfits());
-  const navigate = useNavigate();
+  const [votesLeft, setVotesLeft] = useState(0);
+  const [votesRight, setVotesRight] = useState(0);
+  const [winner, setWinner] = useState(null);
+
   useEffect(() => {
     setOutfits(getRandomOutfits());
+
+    const votesCollection = collection(db, "votes");
+    const q = query(votesCollection);
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      let leftVotes = 0;
+      let rightVotes = 0;
+
+      snapshot.forEach((doc) => {
+        if (doc.data().vote === "left") {
+          leftVotes += 1;
+        } else if (doc.data().vote === "right") {
+          rightVotes += 1;
+        }
+      });
+
+      setVotesLeft(leftVotes);
+      setVotesRight(rightVotes);
+
+      if (leftVotes >= WIN_THRESHOLD) {
+        setWinner("left");
+      } else if (rightVotes >= WIN_THRESHOLD) {
+        setWinner("right");
+      }
+    });
+    return () => unsubscribe();
   }, []);
 
-  const Play2 = () => {
-    navigate('/Win');
-  }
+  const handleVote = async (vote) => {
+    try {
+      await addDoc(collection(db, "votes"), {
+        vote,
+        timestamp: new Date(),
+      });
+    } catch (e) {
+      console.error("Error adding vote: ", e);
+    }
+  };
 
   return (
     <div className="container">
       <Navbar />
-      <div className="container2">
+      <div className={`container2 ${winner ? "winner faded" : ""}`}>
         <div className="vote-image">
           <img src={voteImage} alt="Vote" />
         </div>
-        <div className="content">
+        <div className={`content `}>
           <div className="model">
             <img id="model-image-left" src={modelImage} alt="Model" />
             <img
@@ -68,9 +107,15 @@ const MainVote = () => {
             />
           </div>
         </div>
-        <div className="buttons">
+        {winner && (
+          <div className="congratulations-message" style={{ position: "absolute", top: "60%", left: "47%", transform: "translate(-50%, -50%)", backgroundColor: "#ffffffd9", padding: "20px",  borderRadius: "10px", textAlign: "center", zIndex: 1 }}>
+            <h1 style={{ color: "#7E5B17", margin: 0 , fontSize:'1.5rem',fontWeight:'bold' }}>Congratulations!!</h1>
+            <p style={{ color: "#7E5B17", margin: 0 ,fontSize:'1.5rem',fontWeight:'bold'}}>You won 5 coins</p>
+          </div>
+        )}
+        <div className={`buttons ${winner ? "winner" : ""}`}>
           <button
-          onClick={Play2}
+            onClick={() => handleVote("left")}
             style={{
               border: "5px solid #E27CBF",
               borderRadius: "7px",
@@ -80,13 +125,14 @@ const MainVote = () => {
               width: "130px",
               marginTop: "20px",
               marginBottom: "20px",
-              marginRight : "35px",
-              fontSize:"1.3rem"
+              marginRight: "35px",
+              fontSize: "1.3rem",
             }}
           >
-            56.8K
+            {votesLeft}
           </button>
           <button
+            onClick={() => handleVote("right")}
             style={{
               border: "5px solid #E27CBF",
               borderRadius: "7px",
@@ -96,10 +142,10 @@ const MainVote = () => {
               width: "130px",
               marginTop: "20px",
               marginBottom: "20px",
-              fontSize:"1.3rem"
+              fontSize: "1.3rem",
             }}
           >
-            32.1K
+            {votesRight}
           </button>
         </div>
       </div>
